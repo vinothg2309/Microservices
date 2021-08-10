@@ -1,0 +1,53 @@
+2021-08-10 16:15:59.136  INFO 29815 --- [main] c.j.elk.ElkStackExampleApplication       : Starting ElkStackExampleApplication on vinoth-Lenovo-G50-80 with PID 29815 (/home/vinoth/Learning/Microservices/Microservices-Git/ELK/target/classes started by vinoth in /home/vinoth/Learning/Microservices/Microservices-Git/ELK)
+2021-08-10 16:15:59.142  INFO 29815 --- [main] c.j.elk.ElkStackExampleApplication       : No active profile set, falling back to default profiles: default
+2021-08-10 16:16:02.069  INFO 29815 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9898 (http)
+2021-08-10 16:16:02.096  INFO 29815 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-10 16:16:02.097  INFO 29815 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-08-10 16:16:02.173  INFO 29815 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-10 16:16:02.174  INFO 29815 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2782 ms
+2021-08-10 16:16:02.389  INFO 29815 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-10 16:16:02.584  INFO 29815 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9898 (http) with context path ''
+2021-08-10 16:16:02.589  INFO 29815 --- [main] c.j.elk.ElkStackExampleApplication       : Started ElkStackExampleApplication in 4.38 seconds (JVM running for 4.9)
+2021-08-10 16:39:45.806  INFO 29815 --- [http-nio-9898-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-10 16:39:45.809  INFO 29815 --- [http-nio-9898-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-10 16:39:45.874  INFO 29815 --- [http-nio-9898-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 64 ms
+2021-08-10 16:39:46.088  INFO 29815 --- [http-nio-9898-exec-1] c.j.elk.ElkStackExampleApplication       : user found : User(id=1, name=John)
+2021-08-10 16:39:50.175 ERROR 29815 --- [http-nio-9898-exec-2] c.j.elk.ElkStackExampleApplication       : User Not Found with ID : 55
+2021-08-10 17:18:27.671 ERROR 29815 --- [http-nio-9898-exec-6] c.j.elk.ElkStackExampleApplication       : User Not Found with ID : 55
+2021-08-10 17:18:31.774 ERROR 29815 --- [http-nio-9898-exec-7] c.j.elk.ElkStackExampleApplication       : User Not Found with ID : 100
+2021-08-10 17:18:35.687  INFO 29815 --- [http-nio-9898-exec-8] c.j.elk.ElkStackExampleApplication       : user found : User(id=1, name=John)
+2021-08-10 17:19:20.520  INFO 29815 --- [http-nio-9898-exec-9] c.j.elk.ElkStackExampleApplication       : user found : User(id=1, name=John)
+2021-08-10 17:20:30.917 ERROR 29815 --- [http-nio-9898-exec-2] c.j.elk.ElkStackExampleApplication       : User Not Found with ID : 888
+2021-08-10 17:58:05.533  INFO 29815 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-08-10 17:58:38.475  INFO 28647 --- [main] c.j.elk.ElkStackExampleApplication       : Starting ElkStackExampleApplication on vinoth-Lenovo-G50-80 with PID 28647 (/home/vinoth/Learning/Microservices/Microservices-Git/ELK/target/classes started by vinoth in /home/vinoth/Learning/Microservices/Microservices-Git/ELK)
+2021-08-10 17:58:38.484  INFO 28647 --- [main] c.j.elk.ElkStackExampleApplication       : No active profile set, falling back to default profiles: default
+2021-08-10 17:58:41.729  INFO 28647 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9898 (http)
+2021-08-10 17:58:41.753  INFO 28647 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-10 17:58:41.753  INFO 28647 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-08-10 17:58:41.843  INFO 28647 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-10 17:58:41.843  INFO 28647 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 3230 ms
+2021-08-10 17:58:42.109  INFO 28647 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-10 17:58:42.402  INFO 28647 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9898 (http) with context path ''
+2021-08-10 17:58:42.406  INFO 28647 --- [main] c.j.elk.ElkStackExampleApplication       : Started ElkStackExampleApplication in 5.447 seconds (JVM running for 7.281)
+2021-08-10 18:00:00.826  INFO 28647 --- [http-nio-9898-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-10 18:00:00.828  INFO 28647 --- [http-nio-9898-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-10 18:00:00.856  INFO 28647 --- [http-nio-9898-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 28 ms
+2021-08-10 18:00:01.204 ERROR 28647 --- [http-nio-9898-exec-1] c.j.elk.ElkStackExampleApplication       : User Not Found with ID : 999
+2021-08-10 18:00:05.125  INFO 28647 --- [http-nio-9898-exec-2] c.j.elk.ElkStackExampleApplication       : user found : User(id=1, name=John)
+2021-08-10 18:37:56.875  INFO 28647 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'
+2021-08-10 18:44:43.295  INFO 2568 --- [main] c.e.elk.ElkStackExampleApplication       : Starting ElkStackExampleApplication on vinoth-Lenovo-G50-80 with PID 2568 (/home/vinoth/Learning/Microservices/Microservices-Git/ELK/target/classes started by vinoth in /home/vinoth/Learning/Microservices/Microservices-Git/ELK)
+2021-08-10 18:44:43.300  INFO 2568 --- [main] c.e.elk.ElkStackExampleApplication       : No active profile set, falling back to default profiles: default
+2021-08-10 18:44:46.723  INFO 2568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat initialized with port(s): 9898 (http)
+2021-08-10 18:44:46.739  INFO 2568 --- [main] o.apache.catalina.core.StandardService   : Starting service [Tomcat]
+2021-08-10 18:44:46.741  INFO 2568 --- [main] org.apache.catalina.core.StandardEngine  : Starting Servlet engine: [Apache Tomcat/9.0.33]
+2021-08-10 18:44:46.926  INFO 2568 --- [main] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring embedded WebApplicationContext
+2021-08-10 18:44:46.927  INFO 2568 --- [main] o.s.web.context.ContextLoader            : Root WebApplicationContext: initialization completed in 2615 ms
+2021-08-10 18:44:49.354  INFO 2568 --- [main] o.s.s.concurrent.ThreadPoolTaskExecutor  : Initializing ExecutorService 'applicationTaskExecutor'
+2021-08-10 18:44:50.399  INFO 2568 --- [main] o.s.b.w.embedded.tomcat.TomcatWebServer  : Tomcat started on port(s): 9898 (http) with context path ''
+2021-08-10 18:44:50.882  INFO 2568 --- [main] c.e.elk.ElkStackExampleApplication       : Started ElkStackExampleApplication in 15.331 seconds (JVM running for 18.805)
+2021-08-10 18:45:06.903  INFO 2568 --- [http-nio-9898-exec-1] o.a.c.c.C.[Tomcat].[localhost].[/]       : Initializing Spring DispatcherServlet 'dispatcherServlet'
+2021-08-10 18:45:06.915  INFO 2568 --- [http-nio-9898-exec-1] o.s.web.servlet.DispatcherServlet        : Initializing Servlet 'dispatcherServlet'
+2021-08-10 18:45:06.974  INFO 2568 --- [http-nio-9898-exec-1] o.s.web.servlet.DispatcherServlet        : Completed initialization in 59 ms
+2021-08-10 18:45:07.099  INFO 2568 --- [http-nio-9898-exec-1] c.e.elk.ElkStackExampleApplication       : user found : User(id=1, name=John)
+2021-08-10 18:45:13.778  INFO 2568 --- [http-nio-9898-exec-2] c.e.elk.ElkStackExampleApplication       : user found : User(id=2, name=Shyam)
+2021-08-10 18:46:09.168  INFO 2568 --- [SpringContextShutdownHook] o.s.s.concurrent.ThreadPoolTaskExecutor  : Shutting down ExecutorService 'applicationTaskExecutor'

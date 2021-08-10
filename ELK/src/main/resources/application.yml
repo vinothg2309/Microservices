@@ -1,0 +1,9 @@
+spring:
+  application:
+    name: ELK-STACK-EXAMPLE
+
+server:
+  port: 9898
+
+logging:
+  file: /home/vinoth/Learning/Microservices/Microservices-Git/ELK/logs/elk-stack.log
