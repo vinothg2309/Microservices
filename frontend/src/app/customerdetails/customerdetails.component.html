@@ -1,0 +1,42 @@
+<div class="card borden-success mt-3">
+    <div class="card-header border-success" style="background-color: #c3e6cb;">
+        Customer details</div>
+    <div class="card-body">
+            <div class="row">
+                <div class="col-6 col-md-4"></div>
+                <div class="col-6 col-md-2">Customer Name</div>
+                <div class="col-6 col-md-4">{{ selectedCustomer.name}}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-4"></div>
+                <div class="col-6 col-md-2">Age</div>
+                <div class="co1-6 col-md-4">{{ selectedCustomer.age }}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-4"></div>
+                <div class="col-6 col-md-2">Address</div>
+                <div class="col-6 col-md-4">{{ selectedCustomer.address }}</div>
+            </div>
+            <div class="row">
+                <div class="col-6 col-md-4"></div>
+                <div class="col-6 col-md-2">Phone</div>
+                <div class="col-6 col-md-4">{{ selectedCustomer.contact }}</div>
+            </div>
+            <div class="row">
+                <div class="col-5 col-md-4"></div>
+                <div class="col-6 col-md-2">Employment</div>
+                <div class="col-6 col-md-4">{{ selectedCustomer.employment }}</div>
+            </div>
+    </div>
+    <ul class="nav nav-tabs mt-4 pointer mb-4" role="tablist" id="deposit-loan-nav">
+        <li class="nav-item" (click)="fetchDeposit()">
+            <a class="nav-link px-5 font-weight-bold" 
+            [ngClass]="selectedTab =='deposit' ? 'active': ''">Deposits</a>
+        </li>
+        <li class="nav-item" (click)="fetchLoan()">
+            <a class="nav-link px-5 font-weight-bold" 
+                [ngClass]="selectedTab == 'loan' ? 'active':''">Loans</a>
+        </li>
+    </ul>
+    <app-deposit [customerId]="selectedCustomerId" *ngIf="selectedTab == 'deposit'"></app-deposit>
+    <app-loan [customerId]="selectedCustomerId" *ngIf="selectedTab == 'loan'"></app-loan>

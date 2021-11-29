@@ -1,0 +1,124 @@
+<div class="row">
+    <div class="text-nowrap bd-highlight col-md-10" style="width: 8rem;">
+      <p class="font-weight-bold mb-0 text-center">
+        Response from instance -
+        <span class="text-danger">{{instanceId}}</span>
+        Port = <span class="text-danger">{{instancePort}}</span>
+      </p>
+    </div>
+    <div class="input-group-append mt-2 mb-2 col-md-2" style="float: right;">
+      <button
+        class="btn btn-success"
+        type="submit"
+        data-toggle="modal"
+        data-target="#exampleModal"
+      >
+        <i class="fas fa-plus pr-1"></i>New Deposit
+      </button>
+    </div>
+  </div>
+  <table class="table table-hover mt-2 pointer">
+    <thead class="bg-primary text-white">
+      <tr>
+        <th scope="col">Account Number</th>
+        <th scope="col">Amount</th>
+        <th scope="col">Date</th>
+      </tr>
+    </thead>
+  
+    <tbody>
+      <tr *ngFor="let deposit of deposits">
+        <td>{{deposit.accountNumber}}</td>
+        <td>{{deposit.amount}}</td>
+        <td>{{deposit.date | date }}</td>
+      </tr>
+    </tbody>
+  </table>
+  <div
+    class="modal fade"
+    id="exampleModal"
+    tabindex="-1"
+    role="dialog"
+    aria-labelledby="exampleModalLabel"
+    aria-hidden="true"
+  >
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header bg-primary text-white">
+          <h5 class="modal-title" id="exampleModalLabel">Deposit</h5>
+          <button
+            type="button"
+            class="close"
+            data-dismiss="modal"
+            aria-label="Close"
+          >
+            <span aria-hidden="true">&times; </span>
+          </button>
+        </div>
+        <div class="modal-body">
+          <form class="form-signin" #depositForm="ngForm">
+            <div class="form-label-group">
+              <label for="inputEmail">accountNumber</label>
+              <input
+                type="text"
+                id="accountNumber"
+                class="form-control"
+                [(ngModel)]="newDeposit.accountNumber"
+                name="accountNumber"
+                #accountNumber="ngModel"
+                required
+                autofocus
+              />
+            </div>
+            <div
+              *ngIf="accountNumber.invalid && (accountNumber.dirty || accountNumber.touched)"
+              class="alert alert-danger"
+            >
+              <div *ngIf="accountNumber.errors.required">
+                accountNumber is required.
+              </div>
+            </div>
+            <div class="form-label-group">
+              <label for="inputEmail">Amount</label>
+              <div class="input-group">
+                <div class="input-group-prepend">
+                  <span class="input-group-text" id="basic-addon1">INR</span>
+                </div>
+                <input
+                  type="text"
+                  id="amount"
+                  class="form-control"
+                  [(ngModel)]="newDeposit.amount"
+                  name="amount"
+                  #amount="ngModel"
+                  required
+                  autofocus
+                />
+              </div>
+            </div>
+            <div
+              *ngif="amount.invalid && (amount.dirty || amount.touched)"
+              class="alert alert-danger">
+              <div *ngif="amount.errors.required">Amount is required.</div>
+            </div>
+          </form>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-danger" data-dismiss="modal">
+            Close
+          </button>
+          <button
+            type="button"
+            class="btn btn-success"
+            data-dismiss="modal"
+            [disabled]="!depositForm.valid"
+            (click)="saveDeposit()"
+            type="submit"
+          >
+            Save
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+  

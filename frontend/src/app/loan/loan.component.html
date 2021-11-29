@@ -1,0 +1,238 @@
+<div class="card mb-2">
+    <div class="card-header pb-0" style="background:#d4e4f7;">
+        <div class="row">
+            <h5 class="card-title col-md-2">Loan Details</h5>
+            <div class="text-nowrap bd-highlight col-md-8" style="width: 8rem;">
+                <p class="font-weight-bold mb-8 text-center">Response from
+                    instance -
+                    <span class="text-danger">{{loanInstanceId}}</span> Port - <span
+                        class="text-danger">{{loanInstancePort}} </span>
+                </p>
+            </div>
+            <div class="input-group-append mt-2 mb-2 col-md-2" style="float: right;">
+                <button class="btn btn-sm btn-success" type="submit" data-toggle="modal" data-target-loanModal>
+                    <i class="fas fa-plus pr-1"></i>New Loan </button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover mt-3 mb-2 pointer">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col">Type</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">Tenure</th>
+                    <th scope="col">Interest</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ngFor="let loan of loans">
+                    <td>{{loan.type}}</td>
+                    <td>{{loan.amount}}</td>
+                    <td>{{loan.tenure}}</td>
+                    <td>{{loan.Interest}}</td>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="loanModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="exampleModalLabel">New Loan</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span
+                        aria-hidden="true">&times; </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin" #loanForm="ngForm">
+                    <div class="form-label-group">
+                        <label for="inputEmail">Loan Type</label>
+                        <select class="form-control" id="type" class="form-control" [(ngModel)]="newLoan.type"
+                            name="type" #type="ngModel" required autofocus>
+                            <option>Personal</option>
+                            <option>Automobile</option>
+                            <option>Business</option>
+                        </select>
+                    </div>
+                    <div *ngIf="type.invalid && (type.dirty || type.touched)" class="alert alert-danger">
+                        <div *ngIf="type.errors.required">
+                            Loan Type is required.
+                        </div>
+                    </div>
+                    <div class="form-label-group"> <label for="inputEmail">Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">INR</span>
+                            </div>
+                            <input type="text" id="amount" class="form-control" [(ngModel)]="newLoan.amount"
+                                name="amount" #amount="ngModel" required autofocus>
+                        </div>
+                    </div>
+                    <div *ngIf="amount.invalid && (amount.dirty || amount.touched)" class="alert alert-danger">
+                        <div *ngIf="amount.errors.required"> Amount is required.</div>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail">Tenure</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">Years</span>
+                            </div>
+                            <input type="text" id="tenure" class="form-control" [(ngModel)]="newLoan.tenure"
+                                name="tenure" #tenure="ngModel" required autofocus>
+                        </div>
+                    </div>
+                    <div *ngIf="tenure.invalid && (tenure.dirty || tenure.touched)" class="alert alert-danger">
+                        <div *ngIf="tenure.errors.required">
+                            Tenure is required.
+                        </div>
+                    </div>
+                    <div class="form-label-group"> <label for="inputEmail">Interest</label>
+                        <div class="input-group">
+                            <input type="text" id="interest" class="form-control" [(ngModel)]="newLoan.interest"
+                                name="interest" #interest="ngModel" required autofocus>
+                        </div>
+                    </div>
+                    <div *ngif="interest.invalid && (interest.dirty || interest.touched)" 
+                        class="alert alert-danger">
+                        <div *ngIf="interest.errors.required"> Interest is required.
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer"> <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" [disabled]="loanForm.valid"
+                    (click)="saveLoan()" type="submit"> Save </button>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="card">
+    <div class="card-header pb-8" style="background: #d4e4f7;">
+        <div class="row">
+            <h5 class="card-title col-md-2">Mortgage Details</h5>
+            <div class="text-nowrap bd-highlight col-md-8" style="width: 8rem;">
+                <p class="font-weight-bold mb-0 text-center">Response from instance 
+                    <span class="text-danger">{{mortgageInstanceId}}</span>
+                    Port - <span class="text-danger">{{mortgageInstancePort}}</span></p>
+            </div>
+            <div class="input-group-append mt-2 mb-2 col-md-2" style="float: right">
+                <button class="btn btn-sm btn-success" type="submit" data-toggle="mod" data-target="#mortgageModal">
+                    <i class="fas fa-plus pr-1">
+                    </i>New Mortgage</button>
+            </div>
+        </div>
+    </div>
+    <div class="card-body">
+        <table class="table table-hover pointer">
+            <thead class="bg-primary text-white">
+                <tr>
+                    <th scope="col">Address</th>
+                    <th scope="col">Valuation</th>
+                    <th scope="col">Amount</th>
+                    <th scope="col">EMI</th>
+                    <th scope="col">Tenure</th>
+                    s/tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let mortgage of mortgages">
+                    <td>{{mortgage.address}}</td>
+                    <td>{{mortgage.worth}}</td>
+                    <td>{{mortgage.loan}}</td>
+                    <td>{{mortgage.emi}}</td>
+                    <td>{{mortgage.tenure}}</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+<div class="modal fade" id="mortgageModal" tabindex="-1" role="dialog" aria-labelledby="exampleModaltabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+        <div class="modal-content">
+            <div class="modal-header bg-primary text-white">
+                <h5 class="modal-title" id="exampleModaltabel">New Mortgage</h5>
+                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                    <span aria-hidden="true">&times; </span>
+                </button>
+            </div>
+            <div class="modal-body">
+                <form class="form-signin" #mortgageForm="ngForm">
+                    <div class="form-label-group">
+                        <label for="inputEmail">Locality</label>
+                        <input type="text" id="address" class="form-control" [(ngModel)]="newMortgage.address"
+                            name="address" #locality="ngModel" required autofocus>
+                    </div>
+                    <div *ngIf=" locality.invalid && (locality.dirty || locality.touched)" class="alert alert-danger">
+                        <div *ngIf=" locality.errors.required">
+                            Locality is required.
+                        </div>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail">Property Value</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend"> <span class="input-group-text"
+                                    id="basic-addon1">INR</span>
+                            </div>
+                            <input type="text" id="worth" class="form-control" [(ngModel)]="newMortgage.worth"
+                                name="worth" #worth="ngModel" required autofocus>
+                        </div>
+                    </div>
+                    <div *ngif="worth.invalid && (worth.dirty || worth.touched)" class="alert alert-danger">
+                        <div *ngIf="worth.errors.required"> Property Value is required.</div>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail">Loan Amount</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend"> <span class="input-group-text"
+                                    id="basic-addon1">INR</span>
+                            </div>
+                            <input type="text" id="loan" class="form-control" [(ngModel)]="newMortgage.loan" name="loan"
+                                #loan="ngModel" required autofocus>
+                        </div>
+                    </div>
+                    <div *ngIf="loan.invalid && (loan.dirty || loan.touched)" class="alert alert-danger">
+                        <div *ngIf="loan.errors.required">
+                            Loan Amount is required.
+                        </div>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail">EMI </label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">INR</span>
+                            </div>
+                            <input type="text" id="emi" class="form-control" [(ngModel)]="newMortgage.emi" name="emi"
+                                #emi="ngModel" required autofocus>
+                        </div>
+                    </div>
+                    <div *ngIf="emi.invalid && (emi.dirty || emi.touched)" class="alert alert-danger">
+                        <div *ngIf=" emi.errors.required">
+                            EMI is required.
+                        </div>
+                    </div>
+                    <div class="form-label-group">
+                        <label for="inputEmail"> Tenure</label>
+                        <div class="input-group">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1">YEARS</span>
+                            </div>
+                            <input type="text" id="tenure" class="form-control" [(ngModel)]="newMortgage.tenure"
+                                name="tenure" #tenure="ngModel" required autofocus>
+                        </div>
+                    </div>
+                    <div *ngIf="tenure. invalid && (tenure.dirty || tenure.touched)">
+                        class="alert alert-danger"
+                        <div *ngIf="tenure.errors.required"> Tenure is required.</div>
+                    </div>
+                </form>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                <button type="button" class="btn btn-success" data-dismiss="modal" [disabled]="!mortgageForm.valid"
+                    (click)="saveMortgage()" type="submit">Save</button>
+            </div>
+        </div>
+    </div>
+</div>

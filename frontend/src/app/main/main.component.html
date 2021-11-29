@@ -1,0 +1,32 @@
+<div class="container-fluid">
+    <div style="margin-top:10px">
+    <button type="button" class="btn btn btn-outline-success mb-2"
+    routerLink="/newcustomer"> <i class="fas fa-plus pr-1"></i>Add Customer</button>
+    <div class="card">
+    <div class="card-header" style="background-color: b8daff">Customer Search</div>
+    <div class="card-body">
+    <div class="input-group mb-3">
+    <input type="text" [(ngModel)]="searchString" class="form-control" placeholder="Customer #" aria-label="Recipient's username"
+    aria-describedby="button-addon2"> <div class="input-group-append">
+    <button class="btn btn-outline-primary" type="button" (click)="search()">
+         <i class="fa fa-search pr-1 pp"></i>Search</button>
+    </div>
+    </div>
+    </div>
+    </div>
+    <table class="table table-hover mt-5 pointer" *ngIf="customerList.length > 0">
+    <thead class="table-warning">
+    <tr>
+    <th scope="col">Customer #</th>
+    <th scope="col">Name</th> <th scope="col">Age</th><th scope="col">Address</th>
+    </tr>
+    </thead> <tbody>
+    <tr *ngFor="let customer of customerList" (click)="selectedCustomer(customer)">
+    <th scope="row">{{customer.id}}</th>
+    <td>{{customer.name}}</td>
+    <td>{{customer.age}}</td>
+    <td>{{customer.address}} </td>
+    </tr>
+    </tbody>
+    </table>
+    </div> </div>

@@ -1,0 +1,55 @@
+<div class="card border-success at-3">
+    <div class="card-header border-success" style="background-color: #c3e6cb;">Add Customer</div>
+    <div class="card-body">
+        <form class="form-signin" #customerForm="ngForm" (ngSubmit)="saveCustomer()">
+            <div class="forn-label-group"> <label for="inputEmail">Name</label>
+                <input type="text" id="name" class="form-control" placeholder="Name" [(ngModel)]="newCustomer.name"
+                    name="name" #customername="ngModel" required autofocus>
+            </div>
+            <div *ngIf="customername.invalid && (customername.dirty || customername.touched)"
+                class="alert alert-danger">
+                <div *ngIf="customername.errors.required">
+                    Name is required. </div>
+            </div>
+            <div class="form-label-group"> <label for="inputaddress">Address </label>
+                <input type="text" id="address" class="form-control" placeholder="Address"
+                    [(ngModel)]="newCustomer.address" name="address" #address="ngModel" required>
+            </div>
+            <div *ngIf="address.invalid && (address.dirty || address.touched)" class="alert alert-danger">
+                <div *ngIf="address.errors.required"> Address is required.</div>
+            </div>
+            <div class="form-label-group"> <label for="inputaddress">Age</label>
+                <input type="text" id="age" class="form-control" placeholder="age" [(ngModel)]="newCustomer.age"
+                    name="age" #age="ngModel" required>
+            </div>
+            <div *ngIf="age.invalid && (age.dirty || age.touched)" class="alert alert-danger">
+                <div *ngIf="age.errors.required">
+                    Age is required. </div>
+            </div>
+            <div class="form-label-group">
+                <label for="inputemployment">Employment</label>
+                <input type="text" id="employment" class="form-control" placeholder="employment"
+                    [(ngModel)]="newCustomer.employment" name="employment" #employment="ngModel" required>
+            </div>
+            <div *ngIf="employment.invalid && (employment.dirty || employment.touched)" class="alert alert-danger">
+                <div *ngIf="employment.errors.required"> Employment is required.
+                </div>
+            </div>
+            <div class="form-label-group">
+                <label for="inputphone">Phone</label> <input type="text" id="phone" class="form-control"
+                    placeholder="phone" [(ngModel)]="newCustomer.contact" name="phone" #phone="ngModel" minlength="10"
+                    required>
+            </div>
+            <div *ngIf="phone.invalid && (phone.dirty || phone.touched)" class="alert alert-danger">
+                <div *ngIf="phone.errors.required">
+                    Phone is required.
+                </div>
+                <div *ngIf="phone.errors.minlength">
+                    Phone number must have 10 numbers.
+                </div>
+            </div>
+            <button class="btn btn-lg btn-success mt-3" [disabled]="!customerForm.valid" type="submit">Save</button>
+            <button class="btn btn-lg btn-danger mt-3 ml-3">Cancel</button>
+        </form>
+    </div>
+</div>
